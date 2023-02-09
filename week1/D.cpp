@@ -22,4 +22,5 @@ int main(){
     else{
         cout << "MIN";
     }
+    return 0;
 }
