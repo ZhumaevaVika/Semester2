@@ -18,7 +18,23 @@ void print_arr(int(&arr)[N]){
 }
 
 void moveNegativeToEnd(int (&arr)[N]){
-    
+    int a[N] = {0};
+    int k = 0;
+    for (int i=0; i<N; i++){
+        if (arr[i]>0){
+            a[k] = arr[i];
+            k++;
+        }
+    }
+    for (int i=0; i<N; i++){
+        if (arr[i]<0){
+            a[k] = arr[i];
+            k++;
+        }
+    }
+    for (int i=0; i<N; i++){
+        arr[i] = a[i];
+    }
 }
 
 int main(){

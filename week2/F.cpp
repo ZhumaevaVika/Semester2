@@ -2,7 +2,7 @@
 using namespace std;
 
 #ifndef N
-#define N 10
+#define N 5
 #endif
 
 void read_arr(int(&arr)[N]){
