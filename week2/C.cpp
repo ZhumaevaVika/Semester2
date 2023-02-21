@@ -25,7 +25,7 @@ void shiftRight(int (&arr)[N], unsigned k){
     }
 
     for (int i=0; i<N; i++){
-        arr[i] = copy[N+i-k];
+        arr[i] = copy[N+i-k%N];
     }
 }
 
