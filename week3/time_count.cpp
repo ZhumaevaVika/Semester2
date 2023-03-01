@@ -8,18 +8,6 @@ using namespace std;
 #define N 10000
 #endif
 
-void read_arr(int(&arr)[N]){
-    for (int i=0; i<N; i++){
-        cin >> arr[i];
-    }
-}
-
-void print_arr(int(&arr)[N]){
-    for (int i=0; i<N; i++){
-        cout << arr[i] << " ";
-    }
-}
-
 
 void selectSort(int (&arr)[N], unsigned real_size){
     int tmp, min;

@@ -8,17 +8,7 @@ using namespace std;
 #define N 100000
 #endif
 
-void read_arr(int(&arr)[N]){
-    for (int i=0; i<N; i++){
-        cin >> arr[i];
-    }
-}
 
-void print_arr(int(&arr)[N], unsigned real_size){
-    for (int i=0; i<real_size; i++){
-        cout << arr[i] << " ";
-    }
-}
 
 void shell_sort(int (&arr)[N], unsigned real_size){
     int arGap[16] = { 510774, 227011, 100894, 44842, 19930, 8858, 3937, 1750, 701, 301, 132, 57, 23, 10, 4, 1 };
