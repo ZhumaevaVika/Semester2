@@ -18,14 +18,14 @@ def main(path):
     plt.plot(N, t)
     plt.xlabel(r'$N, элем.$')
     plt.ylabel(r'$t, мс$')
-    plt.title(r'$t(N)$ перебор в среднем случае, cnt = 10000')
+    plt.title(r'$t(N)$ бинпоиск в среднем случае, cnt = 1000000')
     plt.grid(True)
     plt.savefig('LAB1/SEARCH/pictures' + path + 'png')
     plt.show()
 
 paths1 = ['/worst_perebor1.', '/worst_perebor2.', '/worst_perebor3.', '/worst_perebor4.', '/worst_perebor5.']
 paths2 = ['/worst_binsearch1.', '/worst_binsearch2.', '/worst_binsearch3.', '/worst_binsearch4.', '/worst_binsearch5.']
-paths3 = ['/mean_perebor1.', '/mean_perebor2.', '/mean_perebor3.', '/mean_perebor4.', '/mean_perebor5.']
-paths4 = ['/mean_binsearch1.', '/mean_binsearch2.', '/mean_binsearch3.', '/mean_binsearch4.', '/mean_binsearch5.']
-for path in paths3:
+paths3 = ['/mean_perebor1.', '/mean_perebor2.']
+paths4 = ['/mean_binsearch1.', '/mean_binsearch2.']
+for path in paths4:
     main(path)

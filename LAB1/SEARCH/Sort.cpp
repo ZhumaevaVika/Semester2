@@ -5,7 +5,7 @@
 using namespace std;
 
 #ifndef N
-#define N 200000
+#define N 100000
 #endif
 
 void read_arr(int(&arr)[N]){
@@ -60,9 +60,9 @@ int bin_search(int (&arr)[N], int k, unsigned real_size){
 
 int time_count(int (&arr)[N], int k, unsigned real_size){
     auto begin = std::chrono::steady_clock::now();
-    for(unsigned cnt = 10000; cnt != 0 ; --cnt)
-        perebor(arr, k, real_size);
-        //bin_search(arr, k, real_size);
+    for(unsigned cnt = 1000000; cnt != 0 ; --cnt)
+        //perebor(arr, k, real_size);
+        bin_search(arr, k, real_size);
     auto end = std::chrono::steady_clock::now();
     auto time_span =
     std::chrono::duration_cast<std::chrono::milliseconds>(end - begin);
@@ -71,22 +71,23 @@ int time_count(int (&arr)[N], int k, unsigned real_size){
 
 
 int main(){
-    freopen ("text_data/mean_perebor1.txt","w",stdout);
+    freopen ("text_data/mean_binsearch2.txt","w",stdout);
     int step = 100;
     for (int real_size = 100; real_size < N; real_size=real_size+step){
         if (real_size == 5000){
             step = 1000;
         }
         int arr[N];
-        //int k = -1;
+        //int k = -1; // worst
         unsigned seed = real_size;
         std::default_random_engine rng(seed);
         std::uniform_int_distribution<unsigned> dstr(0, real_size-1);
         for (int j=0; j<real_size; j++){
             arr[j] = dstr(rng);
         }
-        
+        // mean
         int sum_time = 0;
+        shell_sort(arr, real_size);
         for (int q=0; q<10; q++){
             int k = arr[dstr(rng)];
             int time = time_count(arr, k, real_size);
