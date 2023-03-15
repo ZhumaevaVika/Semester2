@@ -1,13 +1,12 @@
 #include <iostream>
 #include <chrono>
 #include <random>
-#include<vector>
 
 using std::cout;
 using std::cin;
 using std::endl;
 
-const int MAX_SZ = 1e4;
+const int MAX_SZ = 1e5;
 int a[MAX_SZ];
 int b[MAX_SZ];
 int c[MAX_SZ];
@@ -60,7 +59,7 @@ bool mN(int n, int x) {
     
 double TIME(int n, char ty, bool good_distr=true) {
     // good_distr = true;
-    int amount = std::min(n, 10000);
+    int amount = std::min(n, 100000);
     unsigned seed = 1001;
     std::default_random_engine rng(seed);
     int to = n;
@@ -117,7 +116,7 @@ int main() {
     // std::vector<int> n_vals(4);
     // n_vals = {100}; //100 * 4^k, чтобы хорошо был виден бинпоиск тк он ведет себя как log2
     cout.precision(10);
-    for (auto n = 2000; n <= 10000; n *= 1.2){
+    for (auto n = 2000; n <= 100000; n *= 1.2){
         result(n); 
     }
     fclose (stdout);

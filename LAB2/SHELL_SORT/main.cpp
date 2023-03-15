@@ -95,7 +95,7 @@ int main(){
         std::default_random_engine rng(seed);
         std::uniform_int_distribution<unsigned> dstr(0, real_size-1);
         for (int j=0; j<real_size; j++){
-            arr[j] = dstr(rng);
+            arr[j] = real_size-j;
         }
         cout << time_count(arr, real_size) << ' ' << swap_count/1000 << ' ' << real_size << endl;
     }
